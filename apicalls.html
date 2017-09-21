@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>PNotify Testing</title>
+ <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+ 
+
+</head>
+
+<body>
+  <h2>This is Foo - the home of a sticky note.</h2>
+  <h1 id="test"></h1>
+  
+  <button onclick="clickButton()">Click me!</button>
+santoriniprincess.gsitesdemo.com/wp-json
+<p id="resultForm"></p>
+
+  
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+
+<script type="application/javascript">
+$.ajax({
+    url: "http://santoriniprincess.gsitesdemo.com/wp-json?callback=?;",
+    type: "GET",
+    dataType: 'jsonp',
+    cache: true,
+    success: function (data, status, error) {
+      console.log('success', data);
+    },
+    error: function (data, status, error) {
+      console.log('error', data, status, error);
+    }
+});
+</script>
+
+
+</body>
+</html>

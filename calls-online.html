@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <title>PNotify Testing</title>
+ <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+ 
+
+</head>
+
+<body>
+  <h2>This is Foo - the home of a sticky note.</h2>
+  <h1 id="test"></h1>
+  
+  <button onclick="clickButton()">Click me!</button>
+santoriniprincess.gsitesdemo.com/wp-json
+<p id="resultForm"></p>
+
+  https://www.gosquared.com/
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+
+<script type="application/javascript">
+var url = 'https://wiki.teamfortress.com/wiki/Main_Page';
+
+var animateNumber = function(element, newValue) {
+  var previousNumber = element.data('num') || 0;
+
+  // animate using jQuery
+  $({ a: previousNumber }).animate({ a: newValue }, {
+    duration: 300,
+    step: function () {
+      element.text(~~this.a);
+    },
+    complete: function () {
+      element.text(newValue).data('num', newValue);
+    }
+  });
+};
+
+var updateGoSquared = function() {
+  $.getJSON('https://api.gosquared.com/now/v3/pages?api_key=demo&site_token=GSN-106863-S&href=' + encodeURIComponent(url), function(data) {
+    setTimeout(updateGoSquared, 5000);
+     console.log(data)
+    var visitors = $('#online-now').addClass('visible').find('.visitors');
+    animateNumber(visitors, data.visitors);
+  });
+};
+
+updateGoSquared();
+
+var obj = {
+     "data": { 
+	          "B_HOTEL_ID":"6",
+			  "TIME_PLACED":"2017-08-05 17:22:43",
+			  "CUST_ADDRESS4":"United Kingdom"
+			 }
+}
+
+console.log(obj.data.TIME_PLACED);
+console.log(obj.data.B_HOTEL_ID);
+
+
+
+
+</script>
+
+
+</body>
+</html>
